@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("./picture/pc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.serach_input {
+  height: 50px;
+  width: 40vw;
+  padding: 0px 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgba(245, 245, 220, 0.555);
+}
+
+.wheather_top {
+  margin: 49px;
+  text-align: center;
+}
+.wheather_top h1 {
+  font-size: 40px;
+  padding-bottom: 20px;
+  font-weight: 500;
+  color: rgb(20, 3, 255);
+}
+.wheather_top p {
+  font-size: 20px;
+  color: rgb(20, 3, 255);
+  padding-bottom: 20px;
+}
+.wheather_top h2 {
+  font-size: 60px;
+  font-weight: 700;
+  color: rgb(20, 3, 255);
+}
+
+.wheather_bottom_sections {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border: 1px solid rgb(20, 3, 255);
+  padding: 20px;
+  border-radius: 20px;
+}
+.wheather_bottom_sections .elements {
+  padding: 0px 20px;
+}
+.wheather_bottom_sections .elements h3 {
+  font-size: 18px;
+  font-weight: normal;
+  color: rgb(20, 3, 255);
+  padding-bottom: 10px;
+}
+.wheather_bottom_sections .elements h2 {
+  color: rgb(20, 3, 255);
+}
+
+.wheather_bottom_sections .elements p {
+  font-size: 28px;
+  font-weight: 500;
+  color: rgb(20, 3, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div className="container">
+        <div className="search">
+          <input
+            placeholder="Enter City Name"
+            name="city"
+            className="serach_input"
+            onChange={handleChange}
+            onKeyDown={data}
+            value={location}
+          />
+          <div className="wheather_top">
+            <p>{apiData.name}</p>
+            {apiData.weather ? <h1>{apiData.weather[0].main}</h1> : null}
+
+            {apiData.main ? <h2>{Math.floor(apiData.main.temp)}</h2> : null}
+          </div>
+          <div className="wheather_bottom">
+            <div className="wheather_bottom_sections">
+              <div className="elements">
+                <h3>Feels Like</h3>
+
+                {apiData.main ? (
+                  <h2>{Math.floor(apiData.main.feels_like)}</h2>
+                ) : null}
+              </div>
+              <div className="elements">
+                <h3>Wind Speed </h3>
+                {apiData.wind ? <h2>{apiData.wind.speed}</h2> : null}
+              </div>
+              <div className="elements">
+                <h3> Humidity</h3>
+                {apiData.main ? <h2>{apiData.main.humidity}</h2> : null}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  min-height: 515px;
+}
+
+.container .card:hover {
+  height: 515px;
+}
+
+.imgSection img {
+  height: 400px;
+  width: 350px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  overflow: hidden;
+}
+
+.container .card .textSection {
+  position: relative;
+  top: -140px;
+  padding: 10px 15px;
+  color: #111;
+  text-align: center;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .textSection {
+  margin-top: 30px;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.showComponenet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.showComponenet h1 {
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+.showComponenet input {
+  width: 180px;
+  height: 35px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid black;
+}
+
+.hiddenComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topHiddenComponent {
+  text-align: center;
+}
+.topHiddenComponent h3 {
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+.topHiddenComponent h1 {
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.bottomHiddenComponenet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.elements {
+  text-align: center;
+  padding: 10px;
+}
+
+.elements h3 {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+.elements p {
+  font-size: 14px;
+}
